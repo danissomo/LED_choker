@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #101116;
+    color: #eee;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 450px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: #1c1e27;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.title {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+select, input {
+    width: 100%;
+}
+
+select {
+    background: #292c38;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 15px;
+}
+
+input[type=range] {
+    accent-color: #8b75ff;
+}
+
+input[type=color] {
+    height: 45px;
+    background: transparent;
+    border: 0;
+}
+
+.value {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.small {
+    color: #999;
+    font-size: 13px;
+}
+
+.battery-bar {
+    background: #343642;
+    height: 9px;
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.battery-fill {
+    height: 100%;
+    width: 0%;
+    background: #65d99b;
+    transition: width .4s;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LED Controller</title>
+
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>LED Controller</h2>
+
+<div class="card">
+    <div class="title">ЭФФЕКТ</div>
+
+    <select id="effect"
+    onchange="updateEffectVisibility(); updateSettings()">
+        <option value="rainbow">Rainbow</option>
+        <option value="color">Static Color</option>
+        <option value="breathing">Breathing</option>
+        <option value="confetti">Confetti</option>
+        <option value="fire">Fire</option>
+        <option value="twinkle">Twinkle</option>
+        <option value="bpm">BPM</option>
+        <option value="running">Running Pixel</option>
+        <option value="strobe">Strobe</option>
+        <option value="scanner">Scanner</option>
+        <option value="off">Off</option>
+    </select>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="title">ЯРКОСТЬ</div>
+        <div id="brightnessValue">100</div>
+    </div>
+
+    <input type="range"
+        id="brightness"
+        min="1"
+        max="255"
+        value="100"
+        oninput="brightnessValue.innerText=this.value"
+        onchange="updateSettings()">
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="title">СКОРОСТЬ ЭФФЕКТА</div>
+        <div id="speedValue">50</div>
+    </div>
+
+    <input type="range"
+        id="speed"
+        min="1"
+        max="100"
+        value="50"
+        oninput="speedValue.innerText=this.value"
+        onchange="updateSettings()">
+
+    <div class="row small">
+        <span>Медленно</span>
+        <span>Быстро</span>
+    </div>
+</div>
+
+<!-- Основной цвет -->
+<div class="card" id="colorSetting">
+    <div class="title" id="colorTitle">ЦВЕТ</div>
+
+    <input type="color"
+        id="color"
+        value="#0000ff"
+        onchange="updateSettings()">
+</div>
+
+<!-- Цвет фона -->
+<div class="card" id="backgroundSetting">
+    <div class="title">ЦВЕТ ФОНА</div>
+
+    <input type="color"
+        id="backgroundColor"
+        value="#000000"
+        onchange="updateSettings()">
+</div>
+
+<!-- Цвет пикселя -->
+<div class="card" id="pixelSetting">
+    <div class="title">ЦВЕТ ПИКСЕЛЯ</div>
+
+    <input type="color"
+        id="pixelColor"
+        value="#ff0000"
+        onchange="updateSettings()">
+</div>
+
+<!-- Длина шлейфа -->
+<div class="card" id="trailSetting">
+    <div class="row">
+        <div class="title">ДЛИНА ШЛЕЙФА</div>
+        <div id="trailValue">5</div>
+    </div>
+
+    <input type="range"
+        id="trail"
+        min="0"
+        max="17"
+        value="5"
+        oninput="trailValue.innerText=this.value"
+        onchange="updateSettings()">
+</div>
+
+<div class="card">
+    <div class="title">АККУМУЛЯТОР</div>
+
+    <div class="row">
+        <div class="value" id="percent">--%</div>
+        <div class="small" id="voltage">-- V</div>
+    </div>
+
+    <div class="battery-bar">
+        <div class="battery-fill" id="batteryFill"></div>
+    </div>
+
+    <div class="small" style="margin-top:12px">
+        Обновление каждые 2 секунды
+    </div>
+</div>
+
+<div class="small" style="text-align:center">
+    ESP32 LED Controller
+</div>
+
+</div>
+
+<script src="index.js" defer></script>
+
+</body>
+</html>
